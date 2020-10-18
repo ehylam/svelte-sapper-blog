@@ -24,3 +24,4 @@ export function get(_, res) {
 	const posts = getAllPosts();
 	res.end(JSON.stringify(posts));
 }
+

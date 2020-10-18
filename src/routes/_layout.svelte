@@ -1,10 +1,10 @@
 <script>
 	import Nav from '../components/Nav.svelte';
-
 	export let segment;
 </script>
 
-<style>
+<style type="text/scss" global>
+	@import '../styles/main';
 	main {
 		position: relative;
 		max-width: 56em;

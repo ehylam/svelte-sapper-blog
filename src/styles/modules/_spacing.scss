@@ -1,0 +1,6 @@
+nav {
+    margin: 15px;
+    @include breakpoint(up,lg) {
+        margin: 30px;
+    }
+}

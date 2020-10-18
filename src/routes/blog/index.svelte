@@ -18,10 +18,10 @@
 </style>
 
 <svelte:head>
-	<title>Blog</title>
+	<title>Eric's Thing</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
+<!-- Hero here -->
 
 <ul>
 	{#each posts as post}

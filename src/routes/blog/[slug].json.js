@@ -14,6 +14,7 @@ const getPost = (fileName) => {
 export function get(req, res, _) {
 	const { slug } = req.params;
 
+	// Execute and assign post to the returned values
 	const post = getPost(slug);
 	const renderer = new marked.Renderer();
 
