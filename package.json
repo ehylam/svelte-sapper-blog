@@ -16,7 +16,8 @@
     "polka": "next",
     "rollup-plugin-scss": "^2.6.1",
     "sirv": "^1.0.0",
-    "svelte-preprocess": "^4.5.1"
+    "svelte-preprocess": "^4.5.1",
+    "three": "^0.121.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
