@@ -1,41 +1,43 @@
-import path from "path";
-import fs from "fs";
-import grayMatter from 'gray-matter';
-import marked from 'marked';
+ import path from "path";
+ import fs from "fs";
+ import grayMatter from "gray-matter";
+ import marked from "marked";
 
-// Get markdown files from static/posts/ - directory
-const getPost = (fileName) => {
-	return fs.readFileSync(
-	  path.resolve("static/posts/", `${fileName}.md`),
-	  "utf-8"
-	);
-};
+ const getPost = fileName =>
+   fs.readFileSync(path.resolve("static/posts", `${fileName}.md`), "utf-8");
 
-export function get(req, res, _) {
-	const { slug } = req.params;
+ export function get(req, res, next) {
+   const { slug } = req.params;
 
-	// Execute and assign post to the returned values
-	const post = getPost(slug);
-	const renderer = new marked.Renderer();
+   // get the markdown text
+   const post = getPost(slug);
 
-	const { data, content } = grayMatter(post);
-	const html = marked(content, { renderer });
+   // function that expose helpful callbacks
+   // to manipulate the data before convert it into html
+   const renderer = new marked.Renderer();
 
-	if (html) {
-		res.writeHead(200, {
-			"Content-Type": "application/json",
-		});
 
-		res.end(JSON.stringify({ html, ...data }));
-	} else {
-		res.writeHead(404, {
-			"Content-Type": "application/json",
-		});
+   // parse the md to get front matter
+   // and the content without escaping characters
+   const { data, content } = grayMatter(post);
 
-		res.end(
-			JSON.stringify({
-				message: `Not found`,
-			})
-		);
-	}
-}
+   const html = marked(content, { renderer });
+
+   if (html) {
+	 res.writeHead(200, {
+	   "Content-Type": "application/json"
+	 });
+
+	 res.end(JSON.stringify({ html, ...data }));
+   } else {
+	 res.writeHead(404, {
+	   "Content-Type": "application/json"
+	 });
+
+	 res.end(
+	   JSON.stringify({
+		 message: `Not found`
+	   })
+	 );
+   }
+ }
