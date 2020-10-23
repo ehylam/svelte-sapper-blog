@@ -19,7 +19,7 @@
 <nav class="{navState ? ' active' : ''}">
 	<ul on:click={() => navState = !navState}>
 		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">Projects</a></li>
+		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="projects">Projects</a></li>
 		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
 		<li><a aria-current="{segment === 'threejs' ? 'page' : undefined}" href="threejs">Three.js fun</a></li>
 	</ul>
