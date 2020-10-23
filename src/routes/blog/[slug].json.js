@@ -23,7 +23,7 @@ export function get(req, res, _) {
 
 	if (html) {
 		res.writeHead(200, {
-		"Content-Type": "application/json",
+			"Content-Type": "application/json",
 		});
 
 		res.end(JSON.stringify({ html, ...data }));
@@ -34,7 +34,7 @@ export function get(req, res, _) {
 
 		res.end(
 			JSON.stringify({
-			message: `Not found`,
+				message: `Not found`,
 			})
 		);
 	}
