@@ -2,10 +2,17 @@
 	export let segment;
 
 	let navState = false;
+	// export let themeMode = false;
 
+
+
+	function toggleTheme() {
+		window.document.body.classList.toggle('dark');
+	}
 </script>
 
 <header>
+	<div class="theme" on:click={toggleTheme}></div>
 	<a href="/"><h3>Eric's thing</h3></a>
 
 
@@ -17,7 +24,7 @@
 		</div>
 	</div>
 </header>
-<nav class="{navState ? ' active' : ''}">
+<nav class="navigation{navState ? ' active' : ''}">
 	<ul on:click={() => navState = !navState}>
 		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
 		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="projects">Projects</a></li>
@@ -27,6 +34,24 @@
 </nav>
 
 <style lang="scss">
+	$dark: #222222;
+	$light: #edf7f5;
+	:global(body) {
+		&.dark {
+			.burger span, header .theme {
+				background-color: $light;
+			}
+
+			nav {
+				background-color: $dark;
+
+				a {
+					color: $light;
+				}
+			}
+		}
+
+	}
 	header {
 		position: relative;
 		z-index: 10;
@@ -35,6 +60,22 @@
 		align-items: center;
 		flex-direction: column;
 		margin: 30px auto;
+
+		.theme {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 9;
+			cursor: pointer;
+			left: 30px;
+			width: 20px;
+			height: 20px;
+			background-color: black;
+			border-radius: 100%;
+			@media (min-width: 768px) {
+				left: 50px;
+			}
+		}
 		a {
 			display: inline-block;
 			text-decoration: none;
