@@ -6,7 +6,8 @@
 </script>
 
 <header>
-	<h3>Eric's thing</h3>
+	<a href="/"><h3>Eric's thing</h3></a>
+
 
 	<div class="burger{navState ? ' active' : ''}" on:click={() => navState = !navState}>
 		<div class="burger_wrap">
@@ -34,8 +35,12 @@
 		align-items: center;
 		flex-direction: column;
 		margin: 30px auto;
-		h3 {
-			margin: 0;
+		a {
+			display: inline-block;
+			text-decoration: none;
+			h3 {
+				margin: 0;
+			}
 		}
 		.burger {
 			position: absolute;
