@@ -10,14 +10,10 @@
 	export let posts;
 </script>
 
-<style lang="scss">
-</style>
-
 <svelte:head>
 	<title>Eric's Thing</title>
 </svelte:head>
 
-<!-- Hero here -->
 
 <section class="articles">
 	{#each posts as post}
@@ -26,3 +22,27 @@
 		</article>
 	{/each}
 </section>
+
+<style lang="scss">
+	.articles {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 968px;
+		margin: 0 auto;
+
+		&_post {
+			display: flex;
+			justify-content: center;
+			flex-basis: calc(100% / 3);
+
+			a {
+				@media (min-width: 1024px) {
+					font-size: 24px;
+					line-height: 24px;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+</style>

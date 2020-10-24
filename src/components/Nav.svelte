@@ -53,13 +53,14 @@
 
 	}
 	header {
-		position: relative;
+		position: fixed;
 		z-index: 10;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 		margin: 30px auto;
+		width: 100%;
 
 		.theme {
 			position: absolute;
@@ -145,7 +146,7 @@
 	}
 
 	nav {
-		position: absolute;
+		position: fixed;
 		z-index: 8;
 		top: 0;
 		left: 0;
@@ -184,6 +185,8 @@
 						padding: 20px 0px;
 					}
 					a {
+						position: relative;
+						z-index: 10;
 						text-align: center;
 						text-decoration: none;
 						transition: all 0.25s ease;
