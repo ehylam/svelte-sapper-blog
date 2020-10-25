@@ -35,7 +35,7 @@
 			display: flex;
 			justify-content: center;
 			flex-basis: calc(100% / 3);
-
+			padding: 1.5em 0;
 			a {
 				@media (min-width: 1024px) {
 					font-size: 24px;

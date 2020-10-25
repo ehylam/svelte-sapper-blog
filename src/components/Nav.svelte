@@ -1,14 +1,23 @@
 <script>
+	import { onMount } from 'svelte';
+	import { currentTime } from '../stores.js';
 	export let segment;
 
 	let navState = false;
-	// export let themeMode = false;
 
 
+
+	onMount(() => {
+		if($currentTime > 17) {
+			toggleTheme();
+		}
+
+	})
 
 	function toggleTheme() {
 		window.document.body.classList.toggle('dark');
 	}
+
 </script>
 
 <header>

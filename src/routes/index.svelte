@@ -15,6 +15,12 @@
 	<!-- <ThreeImage /> -->
 </section>
 
-<style>
+<section class="art">
 
+</section>
+
+<style>
+	section {
+
+	}
 </style>
