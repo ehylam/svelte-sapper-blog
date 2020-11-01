@@ -26,8 +26,9 @@
 <style lang="scss">
 	.articles {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
+		flex-wrap: wrap;
 		max-width: 968px;
 		margin: 0 auto;
 
@@ -37,6 +38,7 @@
 			flex-basis: calc(100% / 3);
 			padding: 1.5em 0;
 			a {
+				text-align: center;
 				@media (min-width: 1024px) {
 					font-size: 24px;
 					line-height: 24px;
