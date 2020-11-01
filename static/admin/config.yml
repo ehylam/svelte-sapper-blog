@@ -10,19 +10,16 @@ collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "static/posts" # The path to the folder where our blog posts are stored
-    identifier_field: "slug"
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document
-      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Slug", name: "identifier_field", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-
   - name: "projects" # Used in routes, e.g., /admin/collections/blog
     label: "Projects" # Used in the UI
     folder: "static/projects" # The path to the folder where our blog posts are stored
-    identifier_field: "slug"
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document
-      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Slug", name: "identifier_field", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
