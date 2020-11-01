@@ -71,7 +71,7 @@
 		margin: 0 auto;
 		padding: 30px 0;
 		width: 100%;
-		background-color: $light;
+		// background-color: $light;
 		.theme {
 			position: absolute;
 			top: 50%;
