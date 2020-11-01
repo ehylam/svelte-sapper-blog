@@ -24,7 +24,7 @@
 	<div class="theme" on:click={toggleTheme}></div>
 	<a href="/"><h3>Eric's thing</h3></a>
 
-
+	<!-- To test: On hover set x/y pos to where the mouse is, on hover off, return animation to center. -->
 	<div class="burger{navState ? ' active' : ''}" on:click={() => navState = !navState}>
 		<div class="burger_wrap">
 			<span></span>
@@ -68,16 +68,17 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		margin: 30px auto;
+		margin: 0 auto;
+		padding: 30px 0;
 		width: 100%;
-
+		background-color: $light;
 		.theme {
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 9;
 			cursor: pointer;
-			left: 30px;
+			left: 60px;
 			width: 20px;
 			height: 20px;
 			background-color: black;
@@ -100,6 +101,7 @@
 			z-index: 9;
 			cursor: pointer;
 			right: 30px;
+			padding: 30px;
 			@media (min-width: 768px) {
 				right: 50px;
 			}
@@ -183,13 +185,25 @@
 			margin: 0;
 			padding: 0;
 			max-width: 500px;
+			flex-direction: column;
+
+			@media (min-width: 768px) {
+				flex-direction: unset;
+			}
 
 				li {
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					flex-basis: 50%;
 					list-style: none;
+					&:not(:last-child) {
+						padding-bottom: 30px;
+					}
+					@media (min-width: 768px) {
+						flex-basis: 50%;
+						padding: 10px 0;
+
+					}
 					@media (min-width: 1024px) {
 						padding: 20px 0px;
 					}
@@ -199,8 +213,9 @@
 						text-align: center;
 						text-decoration: none;
 						transition: all 0.25s ease;
-						@media (min-width: 1024px) {
-							font-size: 30px;
+						font-size: 35px;
+						@media (min-width: 768px) {
+							font-size: 40px;
 						}
 
 						&:hover {

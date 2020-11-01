@@ -36,15 +36,18 @@
 		flex-wrap: wrap;
 		max-width: 968px;
 		margin: 3vw auto;
-
+		padding: 0 20px;
 		h1 {
 			margin-bottom: 1.4em;
-			flex-basis: 30%;
+			@media (min-width: 1024px) {
+				flex-basis: 30%;
+			}
 		}
 
 		.content {
-			flex-basis: 70%;
-
+			@media (min-width:1024px) {
+				flex-basis: 70%;
+			}
 			// Issue, if element is not present in the code.. (pre-compile) then it won't be used
 			// unless using :global()
 			:global(p:first-child) {
