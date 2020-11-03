@@ -31,7 +31,7 @@
 			background-color: $dark;
 
 			//  is there a more efficent way...?
-			:global(h1),:global(h2), :global(h3), :global(h4), :global(h5), :global(h6), :global(p), :global(span), :global(input),:global(a) {
+			:global(h1),:global(h2), :global(h3), :global(h4), :global(h5), :global(h6), :global(p), :global(span), :global(input),:global(a),:global(label) {
 				color: $light;
 			}
 		}
