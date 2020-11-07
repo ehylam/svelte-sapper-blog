@@ -32,7 +32,6 @@
     function splitText(textArray) {
         textArray.forEach(letter => {
             if(letter.indexOf(' ') >= 0) {
-                console.log(letter);
                 textArr[i] = null;
             }
             i++;

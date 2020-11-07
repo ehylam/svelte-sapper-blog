@@ -31,7 +31,10 @@
 		flex-wrap: wrap;
 		max-width: 968px;
 		margin: 0 auto;
-
+        padding: 40px 20px;
+        @media (min-width: 1024px) {
+            padding: 60px 0;
+        }
 		&_post {
 			display: flex;
 			justify-content: center;
