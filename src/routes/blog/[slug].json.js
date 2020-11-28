@@ -32,6 +32,7 @@ export function get(req, res, next) {
 		res.end(JSON.stringify({ html, ...data }));
 
 	} else {
+		// Return 404 not found
 		res.writeHead(404, {
 			"Content-Type": "application/json"
 		});

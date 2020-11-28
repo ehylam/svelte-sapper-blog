@@ -20,19 +20,23 @@
 
 </script>
 
-<header>
-	<div class="theme" on:click={toggleTheme}></div>
-	<a href="/"><h3>Eric's thing</h3></a>
-
-	<!-- To test: On hover set x/y pos to where the mouse is, on hover off, return animation to center. -->
-	<div class="burger{navState ? ' active' : ''}" on:click={() => navState = !navState}>
-		<div class="burger_wrap">
-			<span></span>
-			<span></span>
-			<span></span>
+<header class="header">
+	<div class="header_block">
+		<div class="theme" on:click={toggleTheme}></div>
+		<a href="/"><h3>Eric's Thing</h3></a>
+		<!-- To test: On hover set x/y pos to where the mouse is, on hover off, return animation to center. -->
+		<div class="burger{navState ? ' active' : ''}" on:click={() => navState = !navState}>
+			<div class="burger_wrap">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 		</div>
 	</div>
 </header>
+
+<!-- Issues: -->
+<!-- Upon clicking ong any list item it shows the current page and then after that it will display the selected page.. -->
 <nav class="navigation{navState ? ' active' : ''}">
 	<ul on:click={() => navState = !navState}>
 		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
@@ -61,30 +65,43 @@
 		}
 
 	}
-	header {
+
+	.header {
 		position: fixed;
 		z-index: 10;
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		// justify-content: center;
+		// align-items: center;
 		flex-direction: column;
 		margin: 0 auto;
 		padding: 30px 0;
 		width: 100%;
 		// background-color: $light;
+		&_block {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 30px;
+			@media (min-width: 768px) {
+			padding: 0 60px;
+
+			}
+		}
+
 		.theme {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
+			// position: absolute;
+			// top: 50%;
+			// transform: translateY(-50%);
 			z-index: 9;
 			cursor: pointer;
-			left: 60px;
+			// left: 60px;
 			width: 20px;
 			height: 20px;
 			background-color: black;
 			border-radius: 100%;
 			@media (min-width: 768px) {
-				left: 50px;
+				// left: 50px;
 			}
 		}
 		a {
@@ -95,15 +112,14 @@
 			}
 		}
 		.burger {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
+			// position: absolute;
+			// top: 50%;
+			// transform: translateY(-50%);
 			z-index: 9;
 			cursor: pointer;
-			right: 30px;
-			padding: 30px;
+			// right: 30px;
 			@media (min-width: 768px) {
-				right: 50px;
+				// right: 50px;
 			}
 
 

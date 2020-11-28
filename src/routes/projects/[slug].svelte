@@ -33,7 +33,7 @@
 		justify-content: center;
 		align-items: flex-start;
 		flex-wrap: wrap;
-		max-width: 968px;
+		max-width: 1024px;
 		margin: 3vw auto;
 		padding: 0 20px;
 		h1 {

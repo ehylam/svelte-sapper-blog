@@ -7,7 +7,7 @@
     <h2>{heading}</h2>
     <p>{content}</p>
 
-    <div class="stuff">
+    <!-- <div class="stuff">
         <h3>Why do you edit my content.. I have no idea what type..</h3>
         <label>
             Heading
@@ -17,21 +17,21 @@
             Content
             <textarea bind:value={content}></textarea>
         </label>
-    </div>
+    </div> -->
 </section>
 
 
 <style lang="scss">
     .content {
-        max-width: 968px;
+        max-width: 1024px;
         margin: 0 auto;
         padding: 40px 20px;
         @media (min-width: 1024px) {
             padding: 60px 0;
         }
 
-        .stuff {
-            padding-top: 50px;
-        }
+        // .stuff {
+        //     padding-top: 50px;
+        // }
     }
 </style>

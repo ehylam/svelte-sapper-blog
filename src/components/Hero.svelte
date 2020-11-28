@@ -1,10 +1,10 @@
 <script>
     import { onMount } from 'svelte';
-    import * as THREE from 'three';
+    // import * as THREE from 'three';
     import gsap from 'gsap';
-    import hero from '../../static/images/vender.jpg';
+    // import hero from '../../static/images/vender.jpg';
 
-    export let title = "Eric's Thing";
+    export let title = "Eric's Thing"; //Default if no title value is being passed
     let textArr = title.split("");
     let i = 0;
     let titleChanged = false;
